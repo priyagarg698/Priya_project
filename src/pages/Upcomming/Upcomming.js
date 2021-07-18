@@ -21,7 +21,7 @@ function Upcomming(props) {
     return props.upcommingData.map((CampaignData, index) => {
       return (
         <tr key={index}>
-          <TableContent displayData={CampaignData} index={index} dateChangeHandler={props.dateChangeHandler} deleteHandler={deleteHandler} type='upcommingCampaign'></TableContent>
+          <TableContent displayData={CampaignData} index={index} dateChangeHandler={props.dateChangeHandler} deleteHandler={deleteHandler} type='upcommingCampaign' languageData={props.languageData}></TableContent>
         </tr>
       );
     });
@@ -30,16 +30,16 @@ function Upcomming(props) {
       return (
         <Auxillary>
           <th >
-            <div className="pl-2">Date</div>
+            <div className="pl-2">{props.languageData.date.value}</div>
           </th>
           <th >
-            <div className="pl-2">campaign</div>
+            <div className="pl-2">{props.languageData.campaign.value}</div>
           </th>
           <th >
-            <div className="pl-2">view</div>
+            <div className="pl-2">{props.languageData.view.value}</div>
           </th>
           <th >
-            <div className="pl-4 ml-3">actions</div>
+            <div className="pl-4 ml-3">{props.languageData.actions.value}</div>
           </th>
         </Auxillary>
         

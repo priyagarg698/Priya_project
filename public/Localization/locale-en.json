@@ -1,0 +1,57 @@
+{
+    "manageCampaigns":{
+        "key":"manageCampaigns",
+        "value":"Manage Campaigns",
+        "locale": "en"
+    },
+    "upcommingCampaigns":{
+        "key":"upcommingCampaigns",
+        "value":"Upcomming Campaigns",
+        "locale": "en"
+    },
+    "liveCampaigns":{
+        "key":"liveCampaigns",
+        "value":"Live Campaigns",
+        "locale": "en"
+    },
+     "pastCampaigns":{
+        "key":"pastCampaigns",
+        "value":"Past Campaigns",
+        "locale": "gn"
+    },
+    "date":{
+        "key":"date",
+        "value":"Date",
+        "locale": "en"
+    },
+    "campaign":{
+        "key":"campaign",
+        "value":"Campaign",
+        "locale": "en"
+    },
+    "view":{
+        "key":"view",
+        "value":"View",
+        "locale": "en"
+    },
+    "actions":{
+        "key":"actions",
+        "value":"Actions",
+        "locale": "en"
+    },
+    "daysAgo":{
+        "key":"daysAgo",
+        "value":"Days ago",
+        "locale": "en"
+    },
+    "daysAhead":{
+        "key":"daysAhead",
+        "value":"Days ahead",
+        "locale": "en"
+    },
+    "today":{
+        "key":"today",
+        "value":"Today",
+        "locale": "en"
+    }
+}

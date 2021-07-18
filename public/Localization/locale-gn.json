@@ -1,0 +1,57 @@
+{
+    "manageCampaigns":{
+        "key":"manageCampaigns",
+        "value":"Kampagne verwalten",
+        "locale": "gn"
+    },
+    "upcommingCampaigns":{
+        "key":"upcommingCampaigns",
+        "value":"Kommende Kampagnen",
+        "locale": "gn"
+    },
+    "liveCampaigns":{
+        "key":"liveCampaigns",
+        "value":"Live-Kampagnen",
+        "locale": "gn"
+    },
+    "pastCampaigns":{
+        "key":"pastCampaigns",
+        "value":"Vergangene Kampagnen",
+        "locale": "gn"
+    },
+    "date":{
+        "key":"date",
+        "value":"Datum",
+        "locale": "gn"
+    },
+    "campaign":{
+        "key":"campaign",
+        "value":"Kampagne",
+        "locale": "gn"
+    },
+    "view":{
+        "key":"view",
+        "value":"Aussicht",
+        "locale": "gn"
+    },
+    "actions":{
+        "key":"actions",
+        "value":"Aktionen",
+        "locale": "gn"
+    },
+    "daysAgo":{
+        "key":"daysAgo",
+        "value":"Vor Tagen",
+        "locale": "gn"
+    },
+    "daysAhead":{
+        "key":"daysAhead",
+        "value":"Tage im Voraus",
+        "locale": "gn"
+    },
+    "today":{
+        "key":"today",
+        "value":"Heute",
+        "locale": "gn"
+    }
+}
