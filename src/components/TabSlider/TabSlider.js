@@ -7,7 +7,7 @@ import Upcomming from "../../pages/Upcomming/Upcomming";
 import Live from "../../pages/Live/Live";
 import Past from "../../pages/Past/Past";
 
-function TabSlider() {
+function TabSlider(props) {
   function callback(e) {
     console.log(e);
   }
@@ -135,17 +135,17 @@ function TabSlider() {
   return (
     <div className="offset-1 col-10">
       <Tabs onChange={callback} tabBarGutter={20} className="scrollX">
-        <TabPane tab="Upcomming Campaigns" key="1">
+        <TabPane tab={props.languageData.upcommingCampaigns.value} key="1">
           <Upcomming
             upcommingData={upcommingData}
-            dateChangeHandler={dateChange}
+            dateChangeHandler={dateChange} languageData={props.languageData}
           ></Upcomming>
         </TabPane>
-        <TabPane tab="Live Campaigns" key="2">
-          <Live liveData={liveData} dateChangeHandler={dateChange}></Live>
+        <TabPane tab={props.languageData.liveCampaigns.value} key="2">
+          <Live liveData={liveData} dateChangeHandler={dateChange} languageData={props.languageData}></Live>
         </TabPane>
-        <TabPane tab="Past Campaigns" key="3">
-          <Past pastData={pastData} dateChangeHandler={dateChange}></Past>
+        <TabPane tab={props.languageData.pastCampaigns.value} key="3">
+          <Past pastData={pastData} dateChangeHandler={dateChange} languageData={props.languageData}></Past>
         </TabPane>
       </Tabs>
     </div>

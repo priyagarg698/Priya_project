@@ -29,8 +29,8 @@ function TableContent(props){
             <td>
             <div className="row">
               <div className="col-12">{formatDate(props.displayData.createdOn)}</div>
-              <div className="col-12">
-                 {props.type === 'pastCampaign'?calculateDays(props.displayData.createdOn)+' days ago' : null} {props.type === 'upcommingCampaign'? calculateDays(props.displayData.createdOn) + ' days ahead' : null} {props.type === 'liveCampaign'?'Today' : null}
+              <div className="col-12 text-muted">
+                 {props.type === 'pastCampaign'?calculateDays(props.displayData.createdOn) + ' ' + props.languageData.daysAgo.value : null} {props.type === 'upcommingCampaign'? calculateDays(props.displayData.createdOn)  + ' ' +  props.languageData.daysAhead.value : null} {props.type === 'liveCampaign'? props.languageData.today.value : null}
               </div>
             </div>
           </td>
