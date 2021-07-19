@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Auxillary from "../../hoc/Auxillary/Auxillary";
 function TableContent(props){
+  /* display the formatted date */
   function formatDate(data) {
     let d = new Date(data);
     let ye = new Intl.DateTimeFormat("en", { year: "numeric" }).format(d);
@@ -15,8 +16,8 @@ function TableContent(props){
     let da = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(d);
     return `${mo} ${ye}, ${da}`;
   }
+  /* calculate the number of days from the todays date */
   function calculateDays(data) {
-    
     let oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
     let firstDate = new Date(data).setHours(0,0,0,0);
     let secondDate = new Date().setHours(0,0,0,0);
@@ -49,7 +50,7 @@ function TableContent(props){
             </div>
           </td>
           <td>
-            <div className={[classes.custom_pointer,"d-flex"].join(' ')} onClick={()=>props.deleteHandler(props.displayData)}>
+            <div className={[classes.custom_pointer,"d-flex"].join(' ')} onClick={()=>props.priceHandler(props.displayData)}>
               <div className={classes.cssCircle}>&#36;</div>
               <div className="pl-1">View pricing</div>
             </div>

@@ -1,4 +1,3 @@
-// import React from 'react';
 import { useState, React, useEffect } from "react";
 import Tabs, { TabPane } from "rc-tabs";
 import "../../../node_modules/rc-tabs/assets/index.css";
@@ -14,9 +13,9 @@ function TabSlider(props) {
   let [upcommingData, setupcommingData] = useState([]);
   let [liveData, setliveData] = useState([]);
   let [pastData, setpastData] = useState([]);
-
   let [campaignData, setCampaignData] = useState([]);
 
+  /* Fetch the data from data.json to display upcomming, live, past list */
   const getData = () => {
     fetch("data.json", {
       headers: {
@@ -36,6 +35,7 @@ function TabSlider(props) {
     getData();
   }, []);
   useEffect(() => {
+    /* Filter the data based on the future date */
     setupcommingData(
       campaignData.filter(
         (ele) =>
@@ -43,6 +43,8 @@ function TabSlider(props) {
           new Date(ele.createdOn).setHours(0, 0, 0, 0)
       )
     );
+    /* Filter the todays date data */
+
     setliveData(
       campaignData.filter(
         (ele) =>
@@ -50,6 +52,9 @@ function TabSlider(props) {
           new Date(ele.createdOn).setHours(0, 0, 0, 0)
       )
     );
+
+    /* Filter the data based on the past date */
+
     setpastData(
       campaignData.filter(
         (ele) =>
@@ -59,6 +64,7 @@ function TabSlider(props) {
     );
   }, [campaignData]);
 
+  /* handle the functionality when user change the scheduled date */
   function dateChange(event, index, type) {
     if (type === "pastCampaign") {
       if (new Date(event.target.value).setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0)) {
