@@ -6,11 +6,13 @@ function App() {
   let [selectValue, setSelectValue]= useState('en')
   let [languageData, setLanguageData] = useState([]);
 
+/* get called on the chnage of language */
   function handleChange(e){
     setSelectValue(e.target.value)
     getData();
   }
 
+/* Fetch the literals based on the language selected */
   const getData = () => {
     fetch("Localization/locale-"+selectValue+".json", {
       headers: {

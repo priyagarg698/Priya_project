@@ -8,20 +8,22 @@ function Upcomming(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalData, setModalData] = useState({})
 
-  function deleteHandler(data) {
+  /* handle the popup on click of view pricing */
+  function priceHandler(data) {
     setModalData(data);
     setModalIsOpen(true);
   }
 
+  /* close the view pricing popup */
   function closeModalHandler() {
     setModalIsOpen(false);
   }
-  
+  /* Render the table data */
   function renderTableData() {
     return props.upcommingData.map((CampaignData, index) => {
       return (
         <tr key={index}>
-          <TableContent displayData={CampaignData} index={index} dateChangeHandler={props.dateChangeHandler} deleteHandler={deleteHandler} type='upcommingCampaign' languageData={props.languageData}></TableContent>
+          <TableContent displayData={CampaignData} index={index} dateChangeHandler={props.dateChangeHandler} priceHandler={priceHandler} type='upcommingCampaign' languageData={props.languageData}></TableContent>
         </tr>
       );
     });

@@ -1,10 +1,10 @@
 import classes from './Modal.module.css'
 function Modal(props) {
 
+  /*called on the close of the popup */
     function cancelHandler() {
         props.onCancel();
     }
-
 
     return (
         <div className={classes.modalNew}>
