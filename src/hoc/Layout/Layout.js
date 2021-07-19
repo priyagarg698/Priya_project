@@ -9,7 +9,7 @@ function Layout(props) {
           <img src={blueStackLogo} alt="Blue stacks"></img>
         </div>
       </header>
-      <main className="row">{props.children}</main>
+      <main className="row ">{props.children}</main>
     </div>
   );
 }

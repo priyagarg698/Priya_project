@@ -21,16 +21,16 @@ function Modal(props) {
               </div>
             </div>
             <div className="row">
-                <h2 className="col-12">Pricing</h2>
-                <div className="col-4 pt-3">1 Week - 1 Month</div>
-                <div className="offset-6 pt-3 col-2">{props.data.price}</div>
-                <div className="col-4 pt-3">6 Months</div>
-                <div className="offset-6 pt-3 col-2">{props.data.price}</div>
-                <div className="col-4 pt-3">1 Year</div>
-                <div className="offset-6 pt-3 col-2">{props.data.price}</div>
+                <h2 className="col-12">{props.languageData.pricing.value}</h2>
+                <div className="col-4 pt-3">1 {props.languageData.week.value} - 1 {props.languageData.month.value}</div>
+                <div className="offset-6 pt-3 col-2">{props.data.price.value}</div>
+                <div className="col-4 pt-3">6 {props.languageData.months.value}</div>
+                <div className="offset-6 pt-3 col-2">{props.data.price.value}</div>
+                <div className="col-4 pt-3">1 {props.languageData.year.value}</div>
+                <div className="offset-6 pt-3 col-2">{props.data.price.value}</div>
             </div>
             <div className="text-center">
-            <button className={[classes.btn, classes.btn__alt].join(' ')} onClick={cancelHandler}>Close</button>
+            <button className={[classes.btn, classes.btn__alt].join(' ')} onClick={cancelHandler}> {props.languageData.close.value}</button>
 
             </div>
       </div>

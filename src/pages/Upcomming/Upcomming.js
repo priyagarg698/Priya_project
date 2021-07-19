@@ -31,17 +31,17 @@ function Upcomming(props) {
   function renderTableHeader() {
       return (
         <Auxillary>
-          <th >
-            <div className="pl-2">{props.languageData.date.value}</div>
+          <th className="pl-2">
+            <div >{props.languageData.date.value}</div>
           </th>
-          <th >
-            <div className="pl-2">{props.languageData.campaign.value}</div>
+          <th className="pl-2">
+            <div>{props.languageData.campaign.value}</div>
           </th>
-          <th >
-            <div className="pl-2">{props.languageData.view.value}</div>
+          <th className="pl-2">
+            <div>{props.languageData.view.value}</div>
           </th>
-          <th >
-            <div className="pl-4 ml-3">{props.languageData.actions.value}</div>
+          <th className="pl-2">
+            <div>{props.languageData.actions.value}</div>
           </th>
         </Auxillary>
         
@@ -51,18 +51,23 @@ function Upcomming(props) {
   return (
     <div>
       {props.upcommingData.length ? (
+        <div className="table-responsive text-nowrap">
         <table id="CampaignData" className={classes.CampaignData}>
+          <thead>
+          <tr>{renderTableHeader()}</tr>
+          </thead>
           <tbody>
-            <tr>{renderTableHeader()}</tr>
+            
             {renderTableData()}
           </tbody>
         </table>
+        </div>
       ) : null}
       {!props.upcommingData.length ? <h2>No campaign is scheduled</h2> : null}
       {modalIsOpen && (
         <Modal
           onCancel={closeModalHandler}
-          onConfirm={closeModalHandler} data={modalData}
+          onConfirm={closeModalHandler} data={modalData} languageData={props.languageData}
         ></Modal>
       )}
       {modalIsOpen && <Backdrop onCancel={closeModalHandler}></Backdrop>}

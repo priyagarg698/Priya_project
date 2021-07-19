@@ -1,6 +1,5 @@
 #title {
     text-align: start;
-    font-family: arial, sans-serif;
   }
   .custom_pointer{
     cursor: pointer;
@@ -8,7 +7,6 @@
   
   .students {
     text-align: start;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     border: 3px solid #ddd;
     width: 100%;
@@ -18,12 +16,6 @@
     border-bottom: 1px solid #ddd;
     padding: 8px;
   }
-  
-  /* #students tr:nth-child(even){background-color: #f2f2f2;} */
-  
-  /* .students tr:hover {background-color: #ddd;
-  
-  } */
   
   .students th {
     padding-top: 12px;
@@ -41,7 +33,6 @@
     background: #eb840f;
     border: 1px solid #eb840f;
     color: #eb840f;
-    font: 13px Arial, sans-serif;
     line-height: 1.3em;
     color: white;
     padding-left: 0.4em;
