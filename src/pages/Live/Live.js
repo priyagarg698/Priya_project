@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "./Live.module.css";
+import classes from "../Upcomming/Upcomming.module.css";
 import Modal from "../../components/Modal";
 import Backdrop from "../../components/Backdrop";
 import TableContent from "../TableContent/TableContent";
@@ -30,42 +30,49 @@ function Live(props) {
     });
   }
   function renderTableHeader() {
-    <Auxillary>
-          <th >
-            <div className="pl-2">{props.languageData.date.value}</div>
-          </th>
-          <th >
-            <div className="pl-2">{props.languageData.campaign.value}</div>
-          </th>
-          <th >
-            <div className="pl-2">{props.languageData.view.value}</div>
-          </th>
-          <th >
-            <div className="pl-4 ml-3">{props.languageData.actions.value}</div>
-          </th>
-        </Auxillary>
-  }
-
-  return (
-    <div>
-      {props.liveData.length ? (
-        <table id="CampaignDatas" className={classes.CampaignDatas}>
-          <tbody>
-            <tr>{renderTableHeader()}</tr>
-            {renderTableData()}
-          </tbody>
-        </table>
-      ) : null}
-      {!props.liveData.length ? <h2>No campaign is scheduled</h2> : null}
-      {modalIsOpen && (
-        <Modal
-          onCancel={closeModalHandler}
-          onConfirm={closeModalHandler} data={modalData}
-        ></Modal>
-      )}
-      {modalIsOpen && <Backdrop onCancel={closeModalHandler}></Backdrop>}
-    </div>
-  );
+    return (
+      <Auxillary>
+        <th className="pl-2">
+          <div >{props.languageData.date.value}</div>
+        </th>
+        <th className="pl-2">
+          <div>{props.languageData.campaign.value}</div>
+        </th>
+        <th className="pl-2">
+          <div>{props.languageData.view.value}</div>
+        </th>
+        <th className="pl-2">
+          <div>{props.languageData.actions.value}</div>
+        </th>
+      </Auxillary>
+      
+    );
 }
 
+return (
+  <div>
+    {props.liveData.length ? (
+      <div className="table-responsive text-nowrap">
+      <table id="CampaignData" className={classes.CampaignData}>
+        <thead>
+        <tr>{renderTableHeader()}</tr>
+        </thead>
+        <tbody>
+          
+          {renderTableData()}
+        </tbody>
+      </table>
+      </div>
+    ) : null}
+    {!props.liveData.length ? <h2>No campaign is scheduled</h2> : null}
+    {modalIsOpen && (
+      <Modal
+        onCancel={closeModalHandler}
+        onConfirm={closeModalHandler} data={modalData} languageData={props.languageData} 
+      ></Modal>
+    )}
+    {modalIsOpen && <Backdrop onCancel={closeModalHandler}></Backdrop>}
+  </div>
+);
+}
 export default Live;

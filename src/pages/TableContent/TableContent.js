@@ -28,22 +28,22 @@ function TableContent(props){
     return(
         <Auxillary>
             <td>
-            <div className="row">
-              <div className="col-12">{formatDate(props.displayData.createdOn)}</div>
-              <div className="col-12 text-muted">
+            {/* <div> */}
+              <div >{formatDate(props.displayData.createdOn)}</div>
+              <div className=" text-muted">
                  {props.type === 'pastCampaign'?calculateDays(props.displayData.createdOn) + ' ' + props.languageData.daysAgo.value : null} {props.type === 'upcommingCampaign'? calculateDays(props.displayData.createdOn)  + ' ' +  props.languageData.daysAhead.value : null} {props.type === 'liveCampaign'? props.languageData.today.value : null}
               </div>
-            </div>
+            {/* </div> */}
           </td>
           <td>
-            <div className="d-flex">
+            <div className="d-inline-flex">
               <img
                 src={`${process.env.PUBLIC_URL}/${props.displayData.image_url}`}
                 alt={props.displayData.name}
                 width="40"
                 height="40"
               ></img>
-              <div className="col-10 ">
+              <div className="pl-3">
                 <div>{props.displayData.name}</div>
                 <div className="text-muted">{props.displayData.region}</div>
               </div>
@@ -52,33 +52,33 @@ function TableContent(props){
           <td>
             <div className={[classes.custom_pointer,"d-flex"].join(' ')} onClick={()=>props.priceHandler(props.displayData)}>
               <div className={classes.cssCircle}>&#36;</div>
-              <div className="pl-1">View pricing</div>
+              <div className="pl-2">{props.languageData.viewPricing.value}</div>
             </div>
           </td>
           <td>
-            <div className="d-flex col-12">
-              <div className="d-flex col-2">
-                <div>
+            <div className="d-inline-flex">
+              <div >
+                {/* <div> */}
                   <FontAwesomeIcon
                     icon={faFileCsv}
                     className="fa-2x"
                     color="#21a008"
                   />
-                </div>
+                {/* </div> */}
 
-                <div className="pl-2 pt-1">CSV</div>
+                <span className="pl-2 ">{props.languageData.csv.value}</span>
               </div>
-              <div className="d-flex col-2">
-                <div>
+              <div className="pl-5">
+                {/* <div> */}
                   <FontAwesomeIcon
                     icon={faChartLine}
                     className="fa-2x "
                     color="#f3680b"
                   />
-                </div>
-                <div className="pl-2 pt-1">Report</div>
+                {/* </div> */}
+                <span className="pl-2 ">{props.languageData.report.value}</span>
               </div>
-              <div className="d-flex">
+              <div className="pl-3 mt-2">
                 {/* <div className="pl-4"> */}
                   <input className={classes.date}
                     type="date"
@@ -87,7 +87,7 @@ function TableContent(props){
                     }
                   ></input>
                 {/* </div> */}
-                <div className="pl-2 pt-1">Schedule Again</div>
+                <span className="pl-2">{props.languageData.scheduleAgain.value}</span>
               </div>
             </div>
           </td>

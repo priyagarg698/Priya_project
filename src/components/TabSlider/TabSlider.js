@@ -139,8 +139,8 @@ function TabSlider(props) {
 
   }
   return (
-    <div className="offset-1 col-10">
-      <Tabs onChange={callback} tabBarGutter={20} className="scrollX">
+    <div className="offset-1 col-10 pt-4">
+      <Tabs onChange={callback} tabBarGutter={20} >
         <TabPane tab={props.languageData.upcommingCampaigns.value} key="1">
           <Upcomming
             upcommingData={upcommingData}
